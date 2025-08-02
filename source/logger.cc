@@ -11,8 +11,7 @@ void Logger::set_debug(bool mode)
     debug_mode = mode;
 }
 
-template<typename T>
-void Logger::print(const Card& card, T description)
+void Logger::Internal::print_raw(const Card& card, literal description)
 {
     if (!debug_mode && std::strcmp(card.title, Card::Title::DEBUGGING) == 0) return;
     std::string card_colored = std::format("{1}{0}{2}", card.title, card.color, Card::Color::RESET);
@@ -22,13 +21,23 @@ void Logger::print(const Card& card, T description)
         return;
     }
     std::println(stdout, "[{1}] {0}", description, card_colored);
+}
 
+void Logger::Internal::print_raw(literal description)
+{
+    std::println("{0}", description);
+}
+
+template<typename T>
+void Logger::print(const Card& card, T description)
+{
+    Internal::print_raw(card, std::format("{}", description).c_str());
 }
 
 template<typename T>
 void Logger::print(T description)
 {
-    std::println(stdout, "{}", description);
+    Internal::print_raw(std::format("{}", description).c_str());
 }
 
 template void Logger::print<std::string>(std::string);
@@ -36,4 +45,4 @@ template void Logger::print<const char*>(const char*);
 
 template void Logger::print<std::string>(const Card&, std::string);
 template void Logger::print<const char*>(const Card&, const char*);
-}
+} // namespace UntitledDesk

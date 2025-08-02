@@ -1,0 +1,1 @@
+Logger for C++ with namespace, class, struct etc.

@@ -41,7 +41,13 @@ public:
     static void print(const Card& card, T description);
     template<typename T>
     static void print(T description);
+private:
+    struct Internal
+    {
+        static void print_raw(literal description);
+        static void print_raw(const Card& card, literal description);
+    };
 };
-}
+} // namespace UntitledDesk
 
 #endif // LOGGER_HH
