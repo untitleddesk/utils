@@ -4,6 +4,8 @@
 #include <string>
 #include <print>
 
+namespace UntitledDesk
+{
 void Logger::set_debug(bool mode)
 {
     debug_mode = mode;
@@ -34,3 +36,4 @@ template void Logger::print<const char*>(const char*);
 
 template void Logger::print<std::string>(const Card&, std::string);
 template void Logger::print<const char*>(const Card&, const char*);
+}

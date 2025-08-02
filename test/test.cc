@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+using namespace UntitledDesk; // Don't use this. It's bad.
 
 int main()
 {

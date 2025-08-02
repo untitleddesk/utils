@@ -1,9 +1,11 @@
 #ifndef LOGGER_HH
 #define LOGGER_HH
+namespace UntitledDesk
+{
 class Logger
 {
-public:
     static inline bool debug_mode = false;
+public:
     using literal = const char*;
     static void set_debug(bool mode);
     // THe "kind" of any println. It's gonna be putted on the left side.
@@ -40,5 +42,6 @@ public:
     template<typename T>
     static void print(T description);
 };
+}
 
 #endif // LOGGER_HH
