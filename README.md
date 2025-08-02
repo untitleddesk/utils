@@ -1,6 +1,10 @@
-Generic logger made in C++ for my projects. It uses 23 standard, `std::println()` and `std::format()`.
+# UntitledLogger
 
-I've got to compile it into a shared or static library to use it!
+Generic wrapper logger for my C++ projects.
+
+It requires C++23 and uses functions like `std::println` and `std::format`.
+
+You will need to compile it into a shared or static library to use it in your project.
 
 ```cpp
 #include <untitled/logger.hh>
