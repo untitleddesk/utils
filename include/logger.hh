@@ -2,23 +2,39 @@
 #define UNTITLED_LOGGER_HH
 namespace Untitled
 {
-    using literal = const char*;
     struct String
     {
     private:
-        static int length_raw(literal string);
-    public:
+        static int length_raw(const char* string);
         char* data;
+    public:
 
-        String(literal from);
+        String();
+        String(const char* from);
+        ~String();
+
+        const char* raw() const;
         
         // Why do I need making a constructor to use operator???
+        // Because operator doesn't know what to do.
         
-        String operator=(literal from);
+        String operator=(const char* from);
         String operator=(const String& from);
 
         int length() const;
-        static int length(literal from);
+        static int length(const char* from);
+
+        // @todo implement push back
+
+        void push_back(const char* from);
+        void push_back(const String& string);
+    };
+
+    // @todo Make format and understand how it index all '{}' and substitutes them for a variable
+    struct Format
+    {
+        template<typename... Args>
+        Format(const String& string, Args... args);
     };
 }
 namespace Untitled::CLI
@@ -31,23 +47,23 @@ namespace Untitled::CLI
             // constexpr is for the compilation time
             // inline is for runtime
 
-            static constexpr literal RESET = "\033[0m";
-            static constexpr literal GREEN = "\033[32m";
-            static constexpr literal RED = "\033[31;4m";
-            static constexpr literal YELLOW = "\033[33m";
-            static constexpr literal WHITE = "\033[37m";
-            static constexpr literal GRAY = "\033[2;3m";
+            static constexpr const char* RESET = "\033[0m";
+            static constexpr const char* GREEN = "\033[32m";
+            static constexpr const char* RED = "\033[31;4m";
+            static constexpr const char* YELLOW = "\033[33m";
+            static constexpr const char* WHITE = "\033[37m";
+            static constexpr const char* GRAY = "\033[2;3m";
         };
         struct Title
         {
-            static constexpr literal GENERIC = "GENERIC";
-            static constexpr literal INFO = "INFO";
-            static constexpr literal ERROR = "ERROR";
-            static constexpr literal DEBUGGING = "DEBUG";
-            static constexpr literal WARNING = "WARNING";
+            static constexpr const char* GENERIC = "GENERIC";
+            static constexpr const char* INFO = "INFO";
+            static constexpr const char* ERROR = "ERROR";
+            static constexpr const char* DEBUGGING = "DEBUG";
+            static constexpr const char* WARNING = "WARNING";
         };
-        literal color = Color::WHITE;
-        literal title = Title::GENERIC;
+        const char* color = Color::WHITE;
+        const char* title = Title::GENERIC;
     };
     class Logger
     {
@@ -60,20 +76,15 @@ namespace Untitled::CLI
         static constexpr Card GENERIC = { Card::Color::WHITE, Card::Title::GENERIC };
         
         static void set_debug(bool mode);
-        template<typename T, typename... Args>
 
-        static void print(const Card& card, T description, Args... args);
-        template<typename T, typename... Args>
-        static void print(T description, Args... args);
-        
-        template<typename T, typename... Args>
-        static void println(const Card& card, T description, Args... args);
-        template<typename T, typename... Args>
-        static void println(T description, Args... args);
+        template<typename... Args>
+        static void print(const Card& card, const String& description, Args... args);
+        template<typename... Args>
+        static void print(const String& description, Args... args);
     private:
         struct Internal
         {
-            static void print_raw(literal description);
+            static void print_raw(const char* description);
         };
     };
 } // namespace Untitled::CLI
