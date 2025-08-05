@@ -1,5 +1,5 @@
-#ifndef VECTOR3D_GUARD
-#define VECTOR3D_GUARD
+#ifndef UNTITLED_VECTOR3D_GUARD
+#define UNTITLED_VECTOR3D_GUARD
 namespace Untitled::Math
 {
     struct Vector3D
@@ -10,5 +10,5 @@ namespace Untitled::Math
         Vector3D operator+(const Vector3D& right_hand_side) const;
         Vector3D operator-(const Vector3D& right_hand_side) const;
     };
-}
-#endif // VECTOR3D_GUARD
+} // Untitled::Math
+#endif // UNTITLED_VECTOR3D_GUARD

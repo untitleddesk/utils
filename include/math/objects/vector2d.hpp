@@ -1,5 +1,5 @@
-#ifndef VECTOR2D_GUARD
-#define VECTOR2D_GUARD
+#ifndef UNTITLED_VECTOR2D_GUARD
+#define UNTITLED_VECTOR2D_GUARD
 namespace Untitled::Math
 {
     struct Vector2D
@@ -10,5 +10,5 @@ namespace Untitled::Math
         Vector2D operator+(const Vector2D& right_hand_side) const;
         Vector2D operator-(const Vector2D& right_hand_side) const;
     };
-}
-#endif // VECTOR2D_GUARD
+} // Untitled::Math
+#endif // UNTITLED_VECTOR2D_GUARD

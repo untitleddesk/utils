@@ -1,8 +1,8 @@
-#ifndef SQUARE_ROOT_GUARD
-#define SQUARE_ROOT_GUARD
+#ifndef UNTITLED_SQUARE_ROOT_GUARD
+#define UNTITLED_SQUARE_ROOT_GUARD
 namespace Untitled::Math
 {
     // double square_root(double number);
     float square_root(float number);
 }
-#endif // SQUARE_ROOT_GUARD
+#endif // UNTITLED_SQUARE_ROOT_GUARD

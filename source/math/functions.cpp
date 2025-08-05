@@ -1,4 +1,4 @@
-#include "math/functions/square_root.hh"
+#include "math/functions/square_root.hpp"
 #include <xmmintrin.h>
 
 namespace Untitled::Math

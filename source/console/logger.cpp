@@ -1,4 +1,4 @@
-#include "console/logger.hh"
+#include "console/logger.hpp"
 namespace Untitled
 {
     int String::length_raw(const char* string)

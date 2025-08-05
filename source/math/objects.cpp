@@ -1,6 +1,6 @@
-#include "math/functions/square_root.hh"
-#include "math/objects/vector2d.hh"
-#include "math/objects/vector3d.hh"
+#include "math/functions/square_root.hpp"
+#include "math/objects/vector2d.hpp"
+#include "math/objects/vector3d.hpp"
 
 namespace Untitled::Math
 {
