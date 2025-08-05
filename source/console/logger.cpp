@@ -1,4 +1,4 @@
-#include "logger.hh"
+#include "console/logger.hh"
 namespace Untitled
 {
     int String::length_raw(const char* string)
@@ -55,7 +55,7 @@ namespace Untitled
         return from;
     }
 }
-namespace Untitled::CLI
+namespace Untitled::Console
 {
     namespace System
     {

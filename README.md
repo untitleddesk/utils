@@ -1,14 +1,14 @@
-# UntitledLogger
+# UntitledUtils
 
-Generic wrapper logger for my C++ projects.
+A C++ library for my projects.
 
-It requires C++23 and uses functions like `std::println` and `std::format`.
+## UntitledLogger
 
-You will need to compile it into a shared or static library to use it in your project.
+Generic wrapper logger.
 
 ```cpp
 #include <untitled/logger.hh>
-using Log = UntitledDesk::Logger;
+using Log = Untitled:Console::Logger;
 
 int main(void)
 {
@@ -22,5 +22,6 @@ Features:
 - Colors
 - Template
 
-What it doesn't have:
-- Inifite args
+## UntitledMath
+
+Library for studying mathematical operations.
