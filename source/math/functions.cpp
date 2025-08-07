@@ -1,8 +1,40 @@
+#include "math/constants.hpp"
+#include "math/functions/convert.hpp"
 #include "math/functions/square_root.hpp"
+#include "math/functions/trigonometry.hpp"
 #include <xmmintrin.h>
 
 namespace Untitled::Math
 {
+    float radians_to_degrees(float number_in_radians)
+    {
+        const float number_in_degrees = number_in_radians * (180.0f / PI);
+        return number_in_degrees;
+    }
+
+    float degrees_to_radians(float number_in_degrees)
+    {
+        float number_in_radians = number_in_degrees * (180.0f / PI);
+        return number_in_radians;
+    }
+
+    // @todo #3 Implement all most important trigonometric functions
+
+    float sine(float number)
+    {
+        return 0.0;
+    }
+    float cosine(float number)
+    {
+        return 0.0f;
+    }
+    float tangent(float number)
+    {
+        return 0.0f;
+    }
+
+
+
     float square_root(float number)
     {
         // This will break in a few of CPUs. Just for tests
@@ -47,4 +79,4 @@ namespace Untitled::Math
     //     }
     //     return result;
     // }
-}
+} // namespace Untitled::Math
