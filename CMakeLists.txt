@@ -1,26 +1,22 @@
 cmake_minimum_required(VERSION 3.30.0)
-project(UDLogger VERSION 4 LANGUAGES CXX)
-include(CTest)
+project(untitledutils VERSION 4 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(untitledlogger SHARED source/logger.cc)
-target_include_directories(untitledlogger PUBLIC include)
+set(MATH source/math)
+set(CONSOLE source/console)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-set(CPACK_PACKAGE_VENDOR "untitleddesk")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/DESCRIPTION.txt")
-set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/untitleddesk")
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# RPM settings
+set(CONSOLE_SOURCE
+    ${CONSOLE}/logger.cpp)
 
-set(CPACK_RPM_PACKAGE_LICENSE "MIT")
+set(MATH_SOURCE
+    ${MATH}/functions.cpp
+    ${MATH}/objects.cpp)
 
-install(TARGETS untitledlogger LIBRARY DESTINATION lib)
-install(DIRECTORY include/ DESTINATION include/untitled)
-install(FILES LICENSE README.md DESTINATION "share/doc/${PROJECT_NAME}")
-include(CPack)
-add_subdirectory(test)
+add_library(untitledutils SHARED ${CONSOLE_SOURCE} ${MATH_SOURCE})
+include_directories(include)
