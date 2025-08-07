@@ -45,4 +45,4 @@ namespace Untitled::Math
     {
         return Vector2D((x - right_hand_side.x), (y - right_hand_side.y));
     }
-}
+} // nemespace Untitled::Math

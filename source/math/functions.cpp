@@ -14,7 +14,7 @@ namespace Untitled::Math
 
     float degrees_to_radians(float number_in_degrees)
     {
-        float number_in_radians = number_in_degrees * (180.0f / PI);
+        const float number_in_radians = number_in_degrees * (PI / 180.0f);
         return number_in_radians;
     }
 
