@@ -2,8 +2,8 @@
 #define TRIGONOMETRY_GUARD
 namespace Untitled::Math
 {
-    float sine(float number);
-    float cosine(float number);
-    float tangent(float number);
+    float sine(float angle);
+    float cosine(float angle);
+    float tangent(float angle);
 } // namespace Untitled::Math
 #endif // TRIGONOMETRY_GUARD

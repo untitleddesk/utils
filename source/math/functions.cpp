@@ -4,6 +4,9 @@
 #include "math/functions/trigonometry.hpp"
 #include <xmmintrin.h>
 
+#include <cmath>
+// cmath just for sine, cosine and tanget. Using this temporarily.
+
 namespace Untitled::Math
 {
     float radians_to_degrees(float number_in_radians)
@@ -20,17 +23,17 @@ namespace Untitled::Math
 
     // @todo #3 Implement all most important trigonometric functions
 
-    float sine(float number)
+    float sine(float angle)
     {
-        return 0.0;
+        return std::sinf(angle);
     }
-    float cosine(float number)
+    float cosine(float angle)
     {
-        return 0.0f;
+        return std::cosf(angle);
     }
-    float tangent(float number)
+    float tangent(float angle)
     {
-        return 0.0f;
+        return std::tanf(angle);
     }
 
 
