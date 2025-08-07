@@ -1,5 +1,5 @@
-#ifndef STRING_GUARD
-#define STRING_GUARD
+#ifndef UNTITLED_STRING_GUARD
+#define UNTITLED_STRING_GUARD
 namespace Untitled
 {
     // @todo Move String to a new header file
@@ -38,4 +38,4 @@ namespace Untitled
         Format(const String& string, Args... args);
     };
 }
-#endif // STRING_GUARD
+#endif // UNTITLED_STRING_GUARD

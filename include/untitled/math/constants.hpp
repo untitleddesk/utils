@@ -1,7 +1,7 @@
-#ifndef CONSTANTS_GUARD
-#define CONSTANTS_GUARD
+#ifndef UNTITLED_CONSTANTS_GUARD
+#define UNTITLED_CONSTANTS_GUARD
 namespace Untitled::Math
 {
     constexpr double PI = 3.141592653589793;
 } // namespace Untitled::Math
-#endif // CONSTANTS_GUARD
+#endif // UNTITLED_CONSTANTS_GUARD

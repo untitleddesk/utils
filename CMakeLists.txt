@@ -19,4 +19,4 @@ set(MATH_SOURCE
     ${MATH}/objects.cpp)
 
 add_library(untitledutils SHARED ${CONSOLE_SOURCE} ${MATH_SOURCE})
-target_include_directories(untitledutils PUBLIC include)
+include_directories(include)

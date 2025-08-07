@@ -1,6 +1,6 @@
 #ifndef UNTITLED_LOGGER_GUARD
 #define UNTITLED_LOGGER_GUARD
-#include "string.hpp"
+#include <untitled/string.hpp>
 namespace Untitled::Console
 {
     // The "kind" of any println. It's gonna be putted on the left side.
