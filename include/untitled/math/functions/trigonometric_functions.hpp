@@ -20,11 +20,11 @@ namespace Untitled::Math
   template <typename T> T cosine(T angle);
 
   /**
-   * @brief The "mix" of the sine and cosine.
+   * @brief Computes the tangent of the given angle (sin(angle) / cos(angle)).
    *
-   * @tparam T
-   * @param angle
-   * @return T
+   * @tparam T float, double, etc.
+   * @param angle Angle in radians.
+   * @return T The tangent of the angle.
    */
   template <typename T> T tangent(T angle);
 } // namespace Untitled::Math
