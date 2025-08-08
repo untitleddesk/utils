@@ -1,8 +1,5 @@
-#ifndef UNTITLED_SQUARE_ROOT_GUARD
-#define UNTITLED_SQUARE_ROOT_GUARD
+#pragma once
 namespace Untitled::Math
 {
-    // double square_root(double number);
-    float square_root(float number);
-}
-#endif // UNTITLED_SQUARE_ROOT_GUARD
+  template <typename T> T square_root(T value);
+} // namespace Untitled::Math
