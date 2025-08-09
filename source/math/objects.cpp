@@ -1,8 +1,8 @@
-#include <untitled/math/functions/square_root.hpp>
-#include <untitled/math/objects/vector2d.hpp>
-#include <untitled/math/objects/vector3d.hpp>
+#include <recurring/math/functions/square_root.hpp>
+#include <recurring/math/objects/vector2d.hpp>
+#include <recurring/math/objects/vector3d.hpp>
 
-namespace Untitled::Math
+namespace Recurring::Math
 {
   float Vector3D::length() const
   {
@@ -36,4 +36,4 @@ namespace Untitled::Math
   {
     return Vector2D((x - right_hand_side.x), (y - right_hand_side.y));
   }
-} // nemespace Untitled::Math
+} // nemespace Recurring::Math

@@ -1,5 +1,5 @@
 #pragma once
-namespace Untitled::Math
+namespace Recurring::Math
 {
   /**
    * @brief The "X" value of a circle.
@@ -27,4 +27,4 @@ namespace Untitled::Math
    * @return T The tangent of the angle.
    */
   template <typename T> T tangent(T angle);
-} // namespace Untitled::Math
+} // namespace Recurring::Math

@@ -1,5 +1,7 @@
 #pragma once
-namespace Untitled
+// @todo My own format.
+#include <format>
+namespace Recurring
 {
   // @todo Move String to a new header file
   struct String
@@ -28,12 +30,16 @@ namespace Untitled
 
     // void push_back (const char *from);
     void push_back(const String &string);
-  };
 
-  // @todo Make format and understand how it index all '{}' and substitutes
-  // them for a variable. move this to it's own file
-  struct Format
-  {
-    template <typename... Args> Format(const String &string, Args... args);
+    /**
+     * @brief Formats your String!
+     *
+     */
+    template <typename... Args>
+    static String format(const String &string, Args... args)
+    {
+      String formatted = std::format(string.raw(), args...).c_str(); 
+      return formatted;
+    }
   };
-} // namespace Untitled
+} // namespace Recurring

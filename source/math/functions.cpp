@@ -1,14 +1,14 @@
-#include <untitled/math/constants.hpp>
-#include <untitled/math/functions/convert.hpp>
-#include <untitled/math/functions/square_root.hpp>
-#include <untitled/math/functions/trigonometric_functions.hpp>
+#include <recurring/math/constants.hpp>
+#include <recurring/math/functions/convert.hpp>
+#include <recurring/math/functions/square_root.hpp>
+#include <recurring/math/functions/trigonometric_functions.hpp>
 #include <xmmintrin.h>
 
 #include <cmath>
 // cmath just for sine, cosine and tanget. Using this temporarily.
 // sin, cos, tan, sqrt...
 
-namespace Untitled::Math
+namespace Recurring::Math
 {
   template <> float radians_to_degrees(float angle)
   {
@@ -45,4 +45,4 @@ namespace Untitled::Math
 
   template <> float square_root(float value) { return std::sqrtf(value); }
   template <> double square_root(double value) { return std::sqrt(value); }
-} // namespace Untitled::Math
+} // namespace Recurring::Math

@@ -1,6 +1,12 @@
-#include <untitled/console/logger.hpp>
-namespace Untitled::Console
+#include <recurring/console/logger.hpp>
+#include <print>
+#include <recurring/utils/string.hpp>
+namespace Recurring::Console
 {
+  namespace Internal
+  {
+    void print_raw(const char *description);
+  };
   namespace System
   {
     static constexpr int write = 1;
@@ -16,20 +22,20 @@ namespace Untitled::Console
   extern "C" long syscall(long id, long rdi = 0, long rsi = 0, long rdx = 0,
                           long r10 = 0, long r8 = 0, long r9 = 0);
 
-  void Logger::Internal::print_raw(const char *description)
+  void Internal::print_raw(const char *description)
   {
     if(description == nullptr)
       {
         return;
       }
-    syscall((long)System::write, 1, (long)description,
-            (long)String::length(description));
+    // Not using anymore. Because I gotta project my own formatter!
+    std::print("{}", description);
   }
 
   template <typename... Args>
   void Logger::print(const String &description, Args... args)
   {
-    Internal::print_raw(description.raw());
+    Internal::print_raw(String::format(description, args...).raw());
   }
 
   template void Logger::print<>(const String &);
@@ -40,4 +46,4 @@ namespace Untitled::Console
   // void Logger::print(const Card& card, String description, Args&... args);
 
   void Logger::set_debug(bool mode) { debug_mode = mode; }
-} // namespace Untitled::Console
+} // namespace Recurring::Console

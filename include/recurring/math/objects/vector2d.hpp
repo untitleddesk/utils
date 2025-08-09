@@ -1,5 +1,5 @@
 #pragma once
-namespace Untitled::Math
+namespace Recurring::Math
 {
   struct Vector2D
   {
@@ -9,4 +9,4 @@ namespace Untitled::Math
     Vector2D operator+(const Vector2D &right_hand_side) const;
     Vector2D operator-(const Vector2D &right_hand_side) const;
   };
-} // Untitled::Math
+} // Recurring::Math

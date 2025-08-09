@@ -1,6 +1,6 @@
 #pragma once
-#include <untitled/string.hpp>
-namespace Untitled::Console
+
+namespace Recurring::Console
 {
   // The "kind" of any println. It's gonna be putted on the left side.
   struct Card
@@ -28,31 +28,4 @@ namespace Untitled::Console
     const char *color = Color::WHITE;
     const char *title = Title::GENERIC;
   };
-  class Logger
-  {
-    static inline bool debug_mode = false;
-
-  public:
-    static constexpr Card WARNING
-      = {Card::Color::YELLOW, Card::Title::WARNING};
-    static constexpr Card INFO = {Card::Color::GREEN, Card::Title::INFO};
-    static constexpr Card ERROR = {Card::Color::RED, Card::Title::ERROR};
-    static constexpr Card DEBUGGING
-      = {Card::Color::GRAY, Card::Title::DEBUGGING};
-    static constexpr Card GENERIC = {Card::Color::WHITE, Card::Title::GENERIC};
-
-    static void set_debug(bool mode);
-
-    template <typename... Args>
-    static void
-    print(const Card &card, const String &description, Args... args);
-    template <typename... Args>
-    static void print(const String &description, Args... args);
-
-  private:
-    struct Internal
-    {
-      static void print_raw(const char *description);
-    };
-  };
-} // namespace Untitled::CLI
+} // namespace Recurring::Console

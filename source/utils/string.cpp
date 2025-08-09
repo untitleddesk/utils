@@ -1,5 +1,6 @@
-#include "untitled/string.hpp"
-namespace Untitled
+#include "recurring/utils/string.hpp"
+#include <format>
+namespace Recurring
 {
   int String::length_raw(const char *string)
   {
@@ -38,4 +39,4 @@ namespace Untitled
 
   String String::operator=(const char *from) { return from; }
   String String::operator=(const String &from) { return from; }
-} // namespace Untitled
+} // namespace Recurringw

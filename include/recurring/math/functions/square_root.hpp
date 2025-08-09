@@ -1,5 +1,5 @@
 #pragma once
-namespace Untitled::Math
+namespace Recurring::Math
 {
   template <typename T> T square_root(T value);
-} // namespace Untitled::Math
+} // namespace Recurring::Math

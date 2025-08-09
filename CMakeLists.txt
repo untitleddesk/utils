@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.30.0)
-project(untitledutils VERSION 4 LANGUAGES CXX)
+project(recurringutils VERSION 4 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,5 +22,5 @@ set(MATH_SOURCE
     ${MATH}/functions.cpp
     ${MATH}/objects.cpp)
 
-add_library(untitledutils SHARED ${CONSOLE_SOURCE} ${MATH_SOURCE})
+add_library(recurringutils SHARED ${CONSOLE_SOURCE} ${MATH_SOURCE})
 include_directories(include)
