@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(MATH source/math)
 set(CONSOLE source/console)
+set(UTILS source/utils)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -13,6 +14,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(CONSOLE_SOURCE
     ${CONSOLE}/logger.cpp)
+
+set(UTILS_SOURCE
+    ${UTILS}/string.cpp)
 
 set(MATH_SOURCE
     ${MATH}/functions.cpp
